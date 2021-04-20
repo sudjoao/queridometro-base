@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:queridometro/components/emoji-box.widget.dart';
+import 'package:queridometro/components/people-box.widget.dart';
+import 'package:queridometro/components/person-info.widget.dart';
 import 'package:queridometro/utils/color.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -29,7 +32,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: Theme.of(context).textTheme.headline1,
                     ),
                   ),
-                  Text('|'),
+                  Text(
+                    '|',
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline1
+                        .copyWith(fontSize: 36),
+                  ),
                   TextButton(
                     onPressed: () {},
                     child: Text(
@@ -46,37 +55,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: Theme.of(context).textTheme.headline2,
                 ),
               ),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.6,
-                height: MediaQuery.of(context).size.height * 0.3,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(
-                    MediaQuery.of(context).size.width * 0.05,
-                  ),
-                ),
-                child: Center(
-                  child: Text('Person Image'),
-                ),
-              ),
-              Text(
-                'Person Name',
-                style: Theme.of(context).textTheme.headline1,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.6,
-                height: MediaQuery.of(context).size.height * 0.1,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(
-                    MediaQuery.of(context).size.width * 0.05,
-                  ),
-                ),
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.7,
-                height: MediaQuery.of(context).size.height * 0.1,
-              ),
+              PersonInfoWidget(),
+              EmojiBoxWidget(),
+              PeopleBoxWidget(),
             ],
           ),
         ),
